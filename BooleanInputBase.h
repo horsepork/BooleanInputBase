@@ -9,15 +9,23 @@
 
 class BooleanInputBase{
     public:
+        void setInputType(int _inputType){
+            inputType = _inputType;
+        }
+
         void setState(bool newState){
             state = newState;
         }
 
         bool read(){
+            if(inputType == INPUT_PULLUP){
+                return !state;
+            }
             return state;
         }
     private:
         bool state;
+        int inputType = INPUT_PULLUP; // probably safe to assume, for most instances
 };
 
 #endif
