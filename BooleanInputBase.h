@@ -24,7 +24,7 @@ class BooleanInputBase{
             return state;
         }
     private:
-        bool state;
+        bool state = false;
         int inputType = INPUT_PULLUP; // probably safe to assume, for most instances
 };
 
